@@ -1,0 +1,22 @@
+package com.jwd.test.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jwd.test.model.Festival;
+import com.jwd.test.service.FestivalService;
+
+@Service
+public class JpaFestivalService implements FestivalService{
+
+	@Autowired
+	FestivalService festivalService;
+	
+	@Override
+	public List<Festival> findAll() {
+		return festivalService.findAll();
+	}
+
+}

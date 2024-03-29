@@ -1,0 +1,55 @@
+package com.jwd.test.service.impl;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+
+import com.jwd.test.model.Nastup;
+import com.jwd.test.repository.NastupRepository;
+import com.jwd.test.service.NastupService;
+
+@Service
+public class JpaNastupService implements NastupService{
+
+	@Autowired
+	NastupRepository nastupRepository;
+	
+	@Override
+	public Nastup findOne(Long id) {
+		Optional<Nastup> nastup=nastupRepository.findById(id);
+		
+		if(nastup.isPresent())
+			return nastup.get();
+		return null;
+	}
+
+	@Override
+	public Nastup save(Nastup nastup) {
+		return nastupRepository.save(nastup);
+	}
+
+	@Override
+	public Nastup update(Nastup nastup) {
+		return nastupRepository.save(nastup);
+	}
+
+	@Override
+	public Nastup delete(Long id) {
+		Optional<Nastup> nastup=nastupRepository.findById(id);
+		if(nastup.isPresent()) {
+			nastupRepository.deleteById(id); 
+			return nastup.get();
+		}
+		return null;
+	}
+
+
+	@Override
+	public Page<Nastup> search(Long izvodjacId, Long festivalId, int pageNo) {
+		return nastupRepository.search(izvodjacId, festivalId, PageRequest.of(pageNo, 2));
+	}
+
+}

@@ -1,0 +1,115 @@
+package com.jwd.test.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+
+import com.jwd.test.model.Festival;
+import com.jwd.test.model.Izvodjac;
+import com.jwd.test.model.Nastup;
+import com.jwd.test.repository.FestivalRepository;
+import com.jwd.test.repository.IzvodjacRepository;
+import com.jwd.test.repository.NastupRepository;
+import com.jwd.test.service.NastupService;
+
+import net.bytebuddy.asm.Advice.Return;
+
+@Service
+public class JpaNastupService implements NastupService{
+
+	@Autowired
+	NastupRepository nastupRepository;
+	
+	@Autowired
+	FestivalRepository festivalRepository;
+	
+	@Autowired
+	IzvodjacRepository izvodjacRepository;
+	
+	
+	
+	@Override
+	public Nastup findOne(Long id) {
+		Optional<Nastup> nastup=nastupRepository.findById(id);
+		
+		if(nastup.isPresent())
+			return nastup.get();
+		return null;
+	}
+
+	@Override
+	public Nastup save(Nastup nastup) {
+		if(duplikat(nastup.getFestival(), nastup.getIzvodjac()))
+			 throw new IllegalStateException("Na istom festivalu ne mogu nastupati dva izvodjaca iz iste drzave !");
+		
+		return nastupRepository.save(nastup);
+	
+	}
+
+	@Override
+	public Nastup update(Nastup nastup) {
+		return nastupRepository.save(nastup);
+	}
+
+	@Override
+	public Nastup delete(Long id) {
+		Optional<Nastup> nastup=nastupRepository.findById(id);
+		if(nastup.isPresent()) {
+			nastupRepository.deleteById(id); 
+			return nastup.get();
+		}
+		return null;
+	}
+
+
+	@Override
+	public Page<Nastup> search(Long izvodjacId, Long festivalId, int pageNo) {
+		return nastupRepository.search(izvodjacId, festivalId, PageRequest.of(pageNo, 4));
+	}
+
+	@Override
+	public boolean duplikat(Festival festival, Izvodjac izvodjac) {
+		
+		List<Festival> festivali = festivalRepository.findAll();
+		List<Izvodjac> izvodjaci = izvodjacRepository.findAll();
+		
+		for(Festival f:festivali) {
+			if(f.getId()==festival.getId()) {
+				
+				List<Nastup> nastupiFestivala=f.getNastupi();
+				
+				for(Nastup n:nastupiFestivala) {
+					if(n.getIzvodjac().getDrzavaPorekla().equals(izvodjac.getDrzavaPorekla())) {
+						System.out.println("OVO SE DESILO");
+						return true;
+					}
+					else {
+						System.out.println("PRVI FALSE");
+						return false;
+						
+					}
+				}
+				
+			}else {
+				System.out.println("DRUGI FALSE");
+				return false;
+			}
+		}
+		System.out.println("Treci FALSE");
+		return false;
+	}
+	
+	
+
+	
+	
+
+	
+
+	
+
+}

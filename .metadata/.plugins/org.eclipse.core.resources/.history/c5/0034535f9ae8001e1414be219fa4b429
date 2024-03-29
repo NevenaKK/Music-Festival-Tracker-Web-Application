@@ -1,0 +1,27 @@
+package com.jwd.test.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jwd.test.model.Izvodjac;
+import com.jwd.test.service.IzvodjacService;
+
+@Service
+public class JpaIzvodjacService implements IzvodjacService {
+
+	@Autowired
+	IzvodjacService izvodjacService;
+	
+	@Override
+	public List<Izvodjac> findAll() {
+		return izvodjacService.findAll();
+	}
+
+	@Override
+	public Izvodjac save(Izvodjac izvodjac) {
+		return izvodjacService.save(izvodjac);
+	}
+
+}

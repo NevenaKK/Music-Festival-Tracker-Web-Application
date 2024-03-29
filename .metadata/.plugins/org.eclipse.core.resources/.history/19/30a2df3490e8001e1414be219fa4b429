@@ -1,0 +1,13 @@
+package com.jwd.test.web.dto;
+
+import javax.persistence.Column;
+
+public class FestivalDTO {
+
+	private Long id;
+	
+    private String naziv;
+    
+    
+	
+}

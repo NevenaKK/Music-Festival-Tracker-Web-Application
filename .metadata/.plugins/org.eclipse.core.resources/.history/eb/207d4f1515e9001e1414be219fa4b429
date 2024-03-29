@@ -1,0 +1,22 @@
+package com.jwd.test.service;
+
+import org.springframework.data.domain.Page;
+
+import com.jwd.test.model.Festival;
+import com.jwd.test.model.Izvodjac;
+import com.jwd.test.model.Nastup;
+
+public interface NastupService {
+
+	Nastup findOne(Long id);
+	Nastup save(Nastup nastup);
+	Nastup update(Nastup nastup);
+	Nastup delete(Long id);
+	
+	Page<Nastup> search(Long izvodjacId,Long festivalId,int pageNo);
+	
+	boolean duplikat(Festival festival,Izvodjac izvodjac);
+	
+	
+	
+}

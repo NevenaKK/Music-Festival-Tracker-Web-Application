@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="javax.websocket.server.ServerEndpoint"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.AutoConfigureOrder"/>
+    <fullyQualifiedTypeName name="com.jwd.test.web.dto.FestivalDTO"/>
+    <fullyQualifiedTypeName name="com.jwd.test.support.IzvodjacToIzvodjacDto"/>
+    <fullyQualifiedTypeName name="com.jwd.test.web.dto.IzvodjacDTO"/>
+    <fullyQualifiedTypeName name="com.jwd.test.support.IzvodjacDtoToIzvodjac"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.jwd.test.repository.NastupRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.query.Param"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.core.convert.converter.Converter"/>
+    <fullyQualifiedTypeName name="com.jwd.test.service.FestivalService"/>
+    <fullyQualifiedTypeName name="com.jwd.test.support.NastupDtoToNastup"/>
+    <fullyQualifiedTypeName name="com.jwd.test.support.NastupToNastupDto"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.jwd.test.web.dto.NastupDTO"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Positive"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Min"/>
+    <fullyQualifiedTypeName name="net.bytebuddy.asm.Advice.Return"/>
+    <fullyQualifiedTypeName name="com.jwd.test.support.FestivalToFestivalDto"/>
+    <fullyQualifiedTypeName name="com.jwd.test.repository.FestivalRepository"/>
+    <fullyQualifiedTypeName name="com.jwd.test.repository.IzvodjacRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.jwd.test.model.Festival"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.jwd.test.service.IzvodjacService"/>
+    <fullyQualifiedTypeName name="com.jwd.test.service.NastupService"/>
+    <fullyQualifiedTypeName name="com.jwd.test.model.Nastup"/>
+    <fullyQualifiedTypeName name="com.jwd.test.model.Izvodjac"/>
+</qualifiedTypeNameHistroy>
