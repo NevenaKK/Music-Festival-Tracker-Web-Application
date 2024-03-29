@@ -1,4 +1,4 @@
-# Festivals
+# Music festivals
 
 This repository contains a web application developed using Spring Boot, React, and Bootstrap frameworks for tracking music performances.
 
